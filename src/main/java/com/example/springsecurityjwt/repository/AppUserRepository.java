@@ -47,4 +47,8 @@ public interface AppUserRepository {
             """)
     @ResultMap("appUserMapper")
     AppUser getUserById(Long userId);
+
+
+    @Select("SELECT * FROM app_users")
+    List<AppUser> getAllUser();
 }

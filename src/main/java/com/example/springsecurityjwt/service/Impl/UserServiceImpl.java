@@ -50,6 +50,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<AppUser> getAllUser() {
-        return null;
+        return appUserRepository.getAllUser();
     }
 }

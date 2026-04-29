@@ -18,3 +18,11 @@ CREATE TABLE app_user_role
     role_id INT NOT NULL REFERENCES app_roles (role_id) ON DELETE CASCADE,
     PRIMARY KEY (user_id, role_id)
 );
+
+CREATE TABLE user_activity_logs
+(
+    id          serial PRIMARY KEY NOT NULL,
+    user_id     INT NOT NULL REFERENCES app_users (user_id) ON DELETE CASCADE,
+    action_type VARCHAR(30) NOT NULL,
+    timestamp   TIMESTAMP NOT NULL
+);
